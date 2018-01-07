@@ -19,6 +19,7 @@ EOF
     [[ -z "$region" ]] && var_usage
 
     echo "Running: gcloud beta container clusters get-credentials --project=\"$project\" --region=\"$region\" \"$cluster\""
+    gcloud config set container/use_v1_api_client false
     gcloud beta container clusters get-credentials --project="$project" --region="$region" "$cluster" || exit
 fi
 
