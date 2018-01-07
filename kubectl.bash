@@ -18,8 +18,8 @@ EOF
     [[ -z "$cluster" ]] && var_usage
     [[ -z "$region" ]] && var_usage
 
-    echo "Running: gcloud beta container clusters get-credentials --project=\"$project\" --region=\"$region\" \"$cluster\""
-    gcloud beta container clusters get-credentials --project="$project" --region="$region" "$cluster" || exit
+    echo "Running: gcloud container clusters get-credentials --project=\"$project\" --region=\"$region\" \"$cluster\""
+    gcloud container beta clusters get-credentials --project="$project" --region="$region" "$cluster" || exit
 fi
 
 echo "Running: kubectl $@"
